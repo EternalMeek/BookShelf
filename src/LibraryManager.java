@@ -100,7 +100,9 @@ public class LibraryManager {
 			
 			if(choice.equalsIgnoreCase("P")) {
 				System.out.printf("|%-30s|%-20s|%-16s|%-4s |%-13s|%-3s%n", "Name", "Author", "Genre", "Year", "ISBN Number", "Condition");
-				System.out.println("=======================================================================================================");
+				System.out.println("=====================================================================================================");
+				System.out.print(stackingBooks.toString());
+				/*
 				int size=stackingBooks.size();
 				BooksStack temp=new BooksStack(size);
 				int i=0;
@@ -112,6 +114,8 @@ public class LibraryManager {
 				while(!temp.isEmpty()) {
 					stackingBooks.push(temp.pop());
 				}
+
+				 */
 			}
 			
 			if(choice.equalsIgnoreCase("S")) {

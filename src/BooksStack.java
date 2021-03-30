@@ -110,7 +110,7 @@ public class BooksStack {
 		if(s.equalsIgnoreCase("n")) {
 			for(int i=0; i<size;i++) {
 				for(int j=0; j<size;j++) {
-					if(compare(books[j].getName(), books[j+1].getName())>0) {
+					if(compare(books[j].getName(), books[j+1].getName())<0) {
 						Book temp=books[j];
 						books[j]=books[j+1];
 						books[j+1]=temp;
@@ -124,7 +124,7 @@ public class BooksStack {
 		if(s.equalsIgnoreCase("a")) {
 			for(int i=0; i<size;i++) {
 				for(int j=0; j<size;j++) {
-					if(compare(books[j].getAuthor(), books[j+1].getAuthor())>0) {
+					if(compare(books[j].getAuthor(), books[j+1].getAuthor())<0) {
 						Book temp=books[j];
 						books[j]=books[j+1];
 						books[j+1]=temp;
@@ -138,7 +138,7 @@ public class BooksStack {
 		if(s.equalsIgnoreCase("g")) {
 			for(int i=0; i<size;i++) {
 				for(int j=0; j<size;j++) {
-					if(compare(books[j].getGenre(), books[j+1].getGenre())>0) {
+					if(compare(books[j].getGenre(), books[j+1].getGenre())<0) {
 						Book temp=books[j];
 						books[j]=books[j+1];
 						books[j+1]=temp;
@@ -152,7 +152,7 @@ public class BooksStack {
 		if(s.equalsIgnoreCase("y")) {
 			for(int i=0; i<size;i++) {
 				for(int j=0; j<size;j++) {
-					if(books[j].getYear()<books[j+1].getYear()) {
+					if(books[j].getYear()>books[j+1].getYear()) {
 						Book temp=books[j];
 						books[j]=books[j+1];
 						books[j+1]=temp;
@@ -178,11 +178,11 @@ public class BooksStack {
 				}
 			}
 			
-			for(int i=0;i<oc;i++) {
-				books[i]=oldBooks[i];
+			for(int i=0;i<nc;i++) {
+				books[i]=newBooks[i];
 			}
-			for(int i=oc; i<=size; i++) {
-				books[i]=newBooks[i-oc];
+			for(int i=nc; i<=size; i++) {
+				books[i]=oldBooks[i-nc];
 			}
 			return;
 		}
@@ -190,7 +190,7 @@ public class BooksStack {
 		if(s.equalsIgnoreCase("i")) {
 			for(int i=0; i<size;i++) {
 				for(int j=0; j<size;j++) {
-					if(books[j].getISBN()< books[j+1].getISBN()) {
+					if(books[j].getISBN()> books[j+1].getISBN()) {
 						Book temp=books[j];
 						books[j]=books[j+1];
 						books[j+1]=temp;
@@ -229,6 +229,17 @@ public class BooksStack {
 			newBooks[i]=books[i];
 		}
 		books=newBooks;
+	}
+
+	/**
+	 * override toString method
+	 */
+	public String toString(){
+		String s="";
+		for(int i=0; i<=size; i++){
+			s+= books[i].toString();
+		}
+		return s;
 	}
 
 }
