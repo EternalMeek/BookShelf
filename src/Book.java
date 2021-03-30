@@ -4,7 +4,7 @@
  * with title, author, year, genre, condition and year.
  * 
  * @author Tianjun Chen
- * SBU ID: 111103355
+ *
  *
  */
 
@@ -99,7 +99,7 @@ public class Book {
 	 */
 	public String toString() {
 		String s="";
-		s+="	"+name+"	|	"+author+"	|	"+genre+"	|	"+yearPublished+"	|	"+ISBN+"	|	"+con;
+		s+=String.format("|%-30s|%-20s|%-16s|%-4d |%-13d|%-3s%n", name, author, genre, yearPublished , ISBN, con);
 		return s;
 	}
 	

@@ -3,7 +3,7 @@
  * this class will intact with user to manipulate stack
  * 
  * @author Tianjun Chen
- * SBU ID: 111103355
+ *
  *
  */
 
@@ -37,7 +37,7 @@ public class LibraryManager {
 			
 			Scanner in=new Scanner(System.in);
 			String choice=in.next();
-			
+
 			String name, author, genre,con;
 			int year;
 			long isbn;
@@ -89,7 +89,7 @@ public class LibraryManager {
 					System.out.println("Title not found.");
 				}
 				Book copy=stackingBooks.peek();
-				System.out.println(copy.getName()+" was written by "+copy.getAuthor()+"in the year "+
+				System.out.println(copy.getName()+" was written by "+copy.getAuthor()+" in the year "+
 				copy.getYear()+". It is of the "+copy.getGenre()+" genre. The ISBN Number is "+copy.getISBN()+
 				" and it is "+copy.getCondition());
 				while(!temp.isEmpty()) {
@@ -99,12 +99,13 @@ public class LibraryManager {
 			}
 			
 			if(choice.equalsIgnoreCase("P")) {
-				System.out.println("	Name	|"+"	Author	|"+"	Genre	|"+"	Year	|"+"	ISBN Number	|"+"	Condition");
+				System.out.printf("|%-30s|%-20s|%-16s|%-4s |%-13s|%-3s%n", "Name", "Author", "Genre", "Year", "ISBN Number", "Condition");
 				System.out.println("=======================================================================================================");
-				BooksStack temp=new BooksStack(stackingBooks.size());
+				int size=stackingBooks.size();
+				BooksStack temp=new BooksStack(size);
 				int i=0;
-				while(!stackingBooks.isEmpty()&&i<=stackingBooks.size()) {
-					System.out.println(stackingBooks.peek().toString());
+				while(!stackingBooks.isEmpty() && i<=size) {
+					System.out.print(stackingBooks.peek().toString());
 					temp.push(stackingBooks.pop());
 					i++;
 				}
@@ -129,7 +130,7 @@ public class LibraryManager {
 			}
 		}
 	}
-	
+
 	/**
 	 * this method will take user's input
 	 * it's being used in the main.
@@ -139,6 +140,5 @@ public class LibraryManager {
 		Scanner in=new Scanner(System.in);
 		return in.next();
 	}
-	
 
 }

@@ -2,8 +2,8 @@
  * This class is a custom exception
  * throw if the stack is empty
  * 
- * @author tianjun Chen
- * SBU ID: 111103355
+ * @author Tianjun Chen
+ *
  *
  */
 

@@ -4,7 +4,7 @@
  * And manipulate the stack
  * 
  * @author Tianjun Chen
- * SBU ID: 111103355
+ *
  *
  */
 
@@ -97,7 +97,7 @@ public class BooksStack {
 	
 	/**
 	 * the following methods sort the stack on specific requirement given by user.
-	 * @param sthe instruction of how to sort the stack
+	 * @param s the instruction of how to sort the stack
 	 * n- sort by name
 	 * a- sort by author
 	 * g- sort by genre

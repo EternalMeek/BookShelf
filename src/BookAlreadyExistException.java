@@ -2,8 +2,8 @@
  * this is a custom exception
  * throw when there is already a same book in the stack
  * 
- * @author tianjun Chen
- * SBU ID: 111103355
+ * @author Tianjun Chen
+ *
  *
  */
 
