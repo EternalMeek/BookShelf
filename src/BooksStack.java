@@ -235,6 +235,8 @@ public class BooksStack {
 	 * override toString method
 	 */
 	public String toString(){
+		System.out.printf("|%-30s|%-20s|%-16s|%-4s |%-13s|%-3s%n", "Name", "Author", "Genre", "Year", "ISBN Number", "Condition");
+		System.out.println("=====================================================================================================");
 		String s="";
 		for(int i=0; i<=size; i++){
 			s+= books[i].toString();
